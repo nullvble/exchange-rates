@@ -1,0 +1,14 @@
+name: Deployment
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download repo
+        uses: actions/checkout@v4
+      - name: Install deps
+        run: yarn
+      - name: Build app
+        run: yarn build
+      - name: Deploy
+        run: echo deploying...

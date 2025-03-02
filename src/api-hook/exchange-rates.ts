@@ -8,7 +8,7 @@ export interface IExchangeRates {
   sell: number;
 }
 
-const API_URL = 'https://uralsib.ru/api/exchange-rates'
+const url = `${import.meta.env.VITE_API_URL}/rates`;
 
 const searchParams = new URLSearchParams({
   'filter[currency]': JSON.stringify([
@@ -27,7 +27,7 @@ export function useGetExchangeRates() {
   const fetchData = useCallback(() => {
     setLoading(true);
 
-    fetch(`${API_URL}?${searchParams.toString()}`)
+    fetch(`${url}?${searchParams.toString()}`)
     .then(res => res.json())
     .then((res: { data: IExchangeRates[] }) => setData(res.data))
     .catch(e => console.log(e))
