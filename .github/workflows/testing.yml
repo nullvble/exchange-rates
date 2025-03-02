@@ -1,0 +1,11 @@
+name: Test React app
+on: push
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Get repository code
+      uses: actions/checkout@v4
+    - name: Install deps
+      run: yarn
+    - name: Test application
+      run: yarn lint
