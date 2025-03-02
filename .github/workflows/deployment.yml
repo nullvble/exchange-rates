@@ -1,7 +1,7 @@
 name: Deployment
 on: push
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Download repo
@@ -10,14 +10,6 @@ jobs:
         run: yarn
       - name: Lint code
         run: yarn lint
-  build:
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
-      - name: Download repo
-        uses: actions/checkout@v4
-      - name: Install deps
-        run: yarn
       - name: Build app
         run: yarn build
       - name: Deploy
