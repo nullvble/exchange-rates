@@ -1,0 +1,21 @@
+.exchange-rate-card {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: bisque;
+    margin-top: 12px;
+
+    table {
+        width: 100%;
+        color: #636e72;
+        th, td {
+            text-align: left;
+        }
+    }
+
+    &--skeleton {
+        height: 25px;
+        width: 80px;
+        background-color: #636e72;
+        opacity: .5;
+    }
+}
